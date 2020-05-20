@@ -1,0 +1,55 @@
+<div class="container">
+    <h1>
+        variable html #
+    </h1>
+    <form (ngSubmit)="Obtenerformulario(FormularioUsuario)" #FormularioUsuario="ngForm">
+        <h4>
+            Estad Del Formulario
+        </h4>
+        <h5>
+            <pre>
+        valid:{{FormularioUsuario.valid}}
+        invalid:{{FormularioUsuario.invalid}}
+        dirty:{{FormularioUsuario.dirty}}
+        touched:{{FormularioUsuario.touched}}
+        untouched:{{FormularioUsuario.untouched}}
+    </pre>
+        </h5>
+
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                [(ngModel)]="email" name="email" #campoemail="ngModel">
+
+
+
+            <h4>Estados</h4>
+            <pre>
+    dirty:{{campoemail.dirty}}
+    valid:{{campoemail.valid}}
+    invalid:{{campoemail.invalid}}
+    touched:{{campoemail.touched}}
+    untouched:{{campoemail.untouched}}
+</pre>
+
+
+            <div class="alert alert-danger" role="alert"
+                *ngIf="campoemail.errors ! == null && campoemail.dirty === true">
+                <p *ngIf="campoemail.errors.required">
+                    campo email reqerido
+                </p>
+
+                <p *ngIf="campoemail.errors.parttern">
+                    no es email
+                </p>
+            </div>
+
+            <small id="emailHelp" class="form-text text-muted">
+                We'll never share your email with anyone else.
+            </small>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
