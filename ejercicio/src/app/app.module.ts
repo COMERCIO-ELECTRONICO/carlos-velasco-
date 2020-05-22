@@ -7,6 +7,8 @@ import { NoEncontradoComponent } from './no-encontrado/no-encontrado.component';
 import { LoginComponent } from './login/login.component';
 import { IniciarSecionComponent } from './iniciar-secion/iniciar-secion.component';
 import { AppRoutes } from './app.routes';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {ButtonModule} from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,10 @@ import { AppRoutes } from './app.routes';
   ],
   imports: [
     BrowserModule,
-    AppRoutes
+    AppRoutes,
+    BrowserAnimationsModule,
+    ButtonModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
