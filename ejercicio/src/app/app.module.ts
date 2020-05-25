@@ -9,7 +9,8 @@ import { IniciarSecionComponent } from './iniciar-secion/iniciar-secion.componen
 import { AppRoutes } from './app.routes';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ButtonModule} from 'primeng/button';
-
+import {MatInputModule} from '@angular/material/input';
+import {AutoCompleteModule} from 'primeng/autocomplete';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import {ButtonModule} from 'primeng/button';
     AppRoutes,
     BrowserAnimationsModule,
     ButtonModule,
-   
+    MatInputModule,
+    AutoCompleteModule
   ],
   providers: [],
   bootstrap: [AppComponent]
