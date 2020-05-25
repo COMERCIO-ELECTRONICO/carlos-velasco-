@@ -5,8 +5,13 @@ import { NoEncontradoComponent } from './no-encontrado/no-encontrado.component';
 import { Routes, RouterModule } from '@angular/Router';
 import { LoginComponent } from './login/login.component';
 import { IniciarSecionComponent } from './iniciar-secion/iniciar-secion.component';
-
+import { LibroComponent } from './libro/libro.component';
+import { LibroAlquiladoComponent } from './libro-alquilado/libro-alquilado.component';
 const rutas: Routes = [
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
     {
       path: 'inicio',
       component: HomeComponent,
@@ -15,13 +20,18 @@ const rutas: Routes = [
       path: 'iniciar-sesion',
       component: IniciarSecionComponent,
     },
+    
     {
-      path: 'login',
-      component: LoginComponent,
+      path: 'libro',
+      component: LibroComponent,
+    },
+    {
+      path: 'alquilados',
+      component: LibroAlquiladoComponent,
     },
     {
       path: '',
-      redirectTo: 'inicio',
+      redirectTo: 'login',
       pathMatch: 'full'
     },
     {   

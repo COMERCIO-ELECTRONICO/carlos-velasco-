@@ -9,6 +9,8 @@ import { AppRoutes } from './app.routes';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import{MaterialModule} from'./material.module';
 import { PrimeModule } from './prime.madule';
+import { LibroComponent } from './libro/libro.component';
+import { LibroAlquiladoComponent } from './libro-alquilado/libro-alquilado.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { PrimeModule } from './prime.madule';
     NoEncontradoComponent,
     LoginComponent,
     IniciarSecionComponent,
+    LibroComponent,
+    LibroAlquiladoComponent,
     
   ],
   imports: [
