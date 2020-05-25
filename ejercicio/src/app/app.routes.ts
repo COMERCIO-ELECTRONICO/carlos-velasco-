@@ -5,6 +5,8 @@ import { NoEncontradoComponent } from './no-encontrado/no-encontrado.component';
 import { IniciarSesionComponent } from './iniciar-sesion/iniciar-sesion.component';
 import { LoginComponent } from './login/login.component';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
+import { PerfilMaestroComponent  } from'./perfil-maestro/perfil-maestro.component';
+
 
 const rutas: Routes = [
   {
@@ -18,6 +20,10 @@ const rutas: Routes = [
   {
     path: 'estudiante/perfil',
     component: PerfilUsuarioComponent,
+  },
+  {
+    path: 'maestro/perfil',
+    component: PerfilMaestroComponent,
   },
   {
     path: 'login',
