@@ -5,9 +5,7 @@ import { NoEncontradoComponent } from './no-encontrado/no-encontrado.component';
 import { IniciarSesionComponent } from './iniciar-sesion/iniciar-sesion.component';
 import { LoginComponent } from './login/login.component';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
-import { PerfilMaestroComponent  } from'./perfil-maestro/perfil-maestro.component';
-
-
+import { PerilMaestroComponent } from './peril-maestro/peril-maestro.component'
 const rutas: Routes = [
   {
     path: 'inicio',
@@ -23,7 +21,13 @@ const rutas: Routes = [
   },
   {
     path: 'maestro/perfil',
-    component: PerfilMaestroComponent,
+    component: PerilMaestroComponent,
+  },
+  {
+    path: 'usuario',
+    loadChildren: () =>
+      import('./usuario/usuario.module')
+      .then(mod => mod.UsuarioModule),
   },
   {
     path: 'login',

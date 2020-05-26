@@ -1,37 +1,39 @@
+
 <div class="container">
   <div class="row">
     <div class="col-sm-4"></div>
     <div class="col-sm-4">
       <p-autoComplete
-      [(ngModel)]="valorAutocomplete"
-      [suggestions]="sugerencias"
-      (completeMethod)="buscarSugerencia($event)"
-      [dropdown]="true"
-      (onSelect)="valorSeleccionado($event)"
-      >
+        [(ngModel)]="valorAutocomplete"
+        [suggestions]="sugerencias"
+        (completeMethod)="buscarSugerencia($event)"
+        [dropdown]="true"
+        (onSelect)="seteoValorSeleccionado($event)"
+        >
       </p-autoComplete>
 
       <form class="example-form">
-        <mat-form-field class="example-full-width">
+        <mat-form-field
+        class="example-full-width">
           <mat-label>Correo</mat-label>
           <input
           matInput
-          placeholder="xxxx@xxxx.com"
           required
-          [(ngModel)]="correo"
-          name="correo"
+          placeholder="xxx@xxx.com"
+          name="email"
+          [(ngModel)]="email"
           >
         </mat-form-field>
+
         <mat-form-field class="example-full-width">
           <mat-label>Contraseña</mat-label>
           <input
           type="password"
           matInput
           required
-          placeholder="******"
-          [(ngModel)]="pass"
           name="pass"
-          >
+          [(ngModel)]="pass"
+          placeholder="****">
         </mat-form-field>
       </form>
     </div>
@@ -39,19 +41,12 @@
   </div>
   <div class="row">
     <div class="col-sm-6">
-      <button class="btn
-      btn-outline-success
-      btn-block"
-      (click)="ingresar()"
-      >
+      <button class="btn btn-outline-info btn-block "  (click)="ingresar()">
         Ingresar
       </button>
     </div>
     <div class="col-sm-6">
-      <button
-      class="btn
-      btn-outline-success
-      btn-block">
+      <button class="btn btn-outline-success btn-block">
         Crear
       </button>
     </div>

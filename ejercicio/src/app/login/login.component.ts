@@ -8,20 +8,34 @@ import { Router } from '@angular/Router';
 })
 export class LoginComponent implements OnInit {
   // credenciales
+   email = '';
+   pass = '';
+
 
   correo = '';
-  pass = '';
+
   seleccionadoValor;
 
   valorAutocomplete = '';
   arregloResultado = [];
-  sugerencias = ['estudiante', 'maestro', 'otros'];
+  sugerencias = ['carlos', 'kevin', 'otros'];
+
+
+  valorSeleecionado;
 
   constructor(
     private readonly _router: Router,
   ) {}
 
   ngOnInit(): void {}
+
+
+  seteoValorSeleccionado(eventoSeleecionado){
+    console.log(eventoSeleecionado);
+    this.valorSeleecionado = eventoSeleecionado;
+  }
+
+
 
   buscarSugerencia(evento) {
     console.log(evento.query);
@@ -33,36 +47,40 @@ export class LoginComponent implements OnInit {
       this.arregloResultado.push(valorEncontrado);
       this.sugerencias = this.arregloResultado;
     } else {
-      this.sugerencias = ['estudiante', 'maestro', 'otros'];
+      this.sugerencias = ['carlos', 'kevin', 'otros'];
     }
   }
 
-  valorSeleccionado(evento) {
-    console.log(evento);
-    this.seleccionadoValor = evento;
-  }
+
 
   ingresar() {
     console.log(this.valorAutocomplete);
-
     if (this.pass === '1234') {
-      alert(this.correo);
-      if (this.seleccionadoValor === 'estudiante') {
+      alert(this.email);
+      if (this.valorSeleecionado === 'carlos') {
         alert('es estudiante');
-          this._router.navigate(
+
+
+
+        this._router.navigate(
             ['/estudiante','perfil']
             )
+            // localhost:9000/estudiante/perfil
       }
-    } else if (this.pass === '12345') {
-      alert(this.correo);
-      if (this.seleccionadoValor === 'maestro') {
-        alert('es maestro');
-          this._router.navigate(
+    } else  if (this.pass === '123456') {
+      alert(this.email);
+      if (this.valorSeleecionado === 'kevin') {
+        alert('es profesor');
+
+
+
+        this._router.navigate(
             ['/maestro','perfil']
             )
+            // localhost:9000/estudiante/perfil
       }
-    } else {
-      alert('no ingreso');
-    }
+    } 
+     
+    
   }
 }

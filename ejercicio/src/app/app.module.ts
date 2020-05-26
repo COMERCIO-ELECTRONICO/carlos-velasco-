@@ -13,7 +13,9 @@ import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import {AutoCompleteModule} from 'primeng/autocomplete';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
-import { PerfilMaestroComponent } from './perfil-maestro/perfil-maestro.component';
+import { UsuarioModule } from './usuario/usuario.module';
+import { CommonModule } from '@angular/common';
+import { PerilMaestroComponent } from './peril-maestro/peril-maestro.component';
 
 @NgModule({
   declarations: [
@@ -23,16 +25,17 @@ import { PerfilMaestroComponent } from './perfil-maestro/perfil-maestro.componen
     IniciarSesionComponent,
     LoginComponent,
     PerfilUsuarioComponent,
-    PerfilMaestroComponent,
+    PerilMaestroComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutes,
     BrowserAnimationsModule,
     ButtonModule,
-    FormsModule,
     MatInputModule,
-    AutoCompleteModule
+    FormsModule,
+    AutoCompleteModule,
+    UsuarioModule
   ],
   providers: [],
   bootstrap: [AppComponent],
