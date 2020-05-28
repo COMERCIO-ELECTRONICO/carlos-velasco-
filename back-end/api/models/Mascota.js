@@ -10,11 +10,16 @@ module.exports = {
   attributes: {
     nombre:{
       type:'String',
-      requiered: true
+     
     },
     edad:{
       type:'number'
-    }
+    },
+    // relacion many one
+    iduser:{
+      model:'Usuario'
+
+}
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝

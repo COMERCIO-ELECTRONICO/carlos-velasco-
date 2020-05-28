@@ -10,7 +10,7 @@ module.exports = {
   attributes: {
     nombre:{
       type:'String',
-      requiered: true
+  
     },
     correo:{
 type:'string'
@@ -22,8 +22,13 @@ type:'string'
     },
     soltero:{
       type:'Boolean'
-    }
+    },
+///relacion one to many
+mascota: {
+collection:'Mascota',
+via:'iduser'
 
+}
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
