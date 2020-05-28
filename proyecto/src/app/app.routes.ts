@@ -7,11 +7,14 @@ import { LoginComponent } from './login/login.component';
 import { IniciarSecionComponent } from './iniciar-secion/iniciar-secion.component';
 import { LibroComponent } from './libro/libro.component';
 import { LibroAlquiladoComponent } from './libro-alquilado/libro-alquilado.component';
+
+
 const rutas: Routes = [
   {
     path: 'login',
     component: LoginComponent,
   },
+ 
     {
       path: 'inicio',
       component: HomeComponent,

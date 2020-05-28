@@ -7,3 +7,17 @@
   .example-full-width {
     width: 100%;
   }
+  .container-form{
+ background: url('https://image.freepik.com/foto-gratis/textura-viejo-fondo-papel-anaranjado-primer-estructura-carton-denso_113767-2088.jpg') center no-repeat;
+    justify-content: center;
+    background-size: cover;
+    height: 100vh;
+}
+.stile-form{
+margin-top: 5rem;
+text-align: center;
+
+
+
+
+}

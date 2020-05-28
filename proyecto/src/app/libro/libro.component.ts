@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./libro.component.css']
 })
 export class LibroComponent implements OnInit {
-
+  
   constructor() { }
 
   ngOnInit(): void {
   }
-
+ 
 }

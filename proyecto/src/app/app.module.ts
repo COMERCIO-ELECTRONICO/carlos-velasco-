@@ -12,6 +12,7 @@ import { PrimeModule } from './prime.madule';
 import { LibroComponent } from './libro/libro.component';
 import { LibroAlquiladoComponent } from './libro-alquilado/libro-alquilado.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +22,7 @@ import { LibroAlquiladoComponent } from './libro-alquilado/libro-alquilado.compo
     IniciarSecionComponent,
     LibroComponent,
     LibroAlquiladoComponent,
+   
     
   ],
   imports: [
