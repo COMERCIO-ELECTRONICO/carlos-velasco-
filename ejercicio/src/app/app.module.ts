@@ -16,7 +16,8 @@ import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.componen
 import { UsuarioModule } from './usuario/usuario.module';
 import { CommonModule } from '@angular/common';
 import { PerilMaestroComponent } from './peril-maestro/peril-maestro.component';
-
+import {HttpClientModule} from "@angular/common/http";
+import { LoginServices } from './services/login.services';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,9 +36,12 @@ import { PerilMaestroComponent } from './peril-maestro/peril-maestro.component';
     MatInputModule,
     FormsModule,
     AutoCompleteModule,
-    UsuarioModule
+    UsuarioModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    LoginServices
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

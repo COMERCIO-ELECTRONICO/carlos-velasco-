@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/Router';
+import { LoginServices } from '../services/login.services';
 
 @Component({
   selector: 'app-login',
@@ -25,9 +26,19 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private readonly _router: Router,
+    private readonly _LoginServices:LoginServices
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this._LoginServices
+    .metodoget('http://localhost:1337/usuario')
+    .subscribe((resultadoMetodoGet) => {
+      console.log('Respuest de Get');
+      console.log(resultadoMetodoGet);
+    });
+
+    
+  }
 
 
   seteoValorSeleccionado(eventoSeleecionado){
@@ -54,6 +65,25 @@ export class LoginComponent implements OnInit {
 
 
   ingresar() {
+    this._LoginServices
+    .metodopost(
+      'http://localhost:1337/usuario',
+      {
+        nombre: "prueva de ingreso",
+        correo: this.email,
+        edad: this.pass,
+        soltero: true
+      }
+      )
+    .subscribe(
+      (resultadoPost)=>{
+        console.log('Respuest de Post');
+        console.log(resultadoPost);
+      }
+    )
+
+
+
     console.log(this.valorAutocomplete);
     if (this.pass === '1234') {
       alert(this.email);
@@ -83,4 +113,15 @@ export class LoginComponent implements OnInit {
      
     
   }
+  eliminarRegitroPorId(){
+    this._LoginServices
+    .metododelete('http://localhost:1337/usuario/1').subscribe(
+      (respuestDelete)=>{
+        console.log(' repuesta de delete');
+        console.log(respuestDelete);
+      }
+    )
+  }
+
+
 }
