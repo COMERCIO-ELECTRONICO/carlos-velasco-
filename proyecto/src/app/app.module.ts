@@ -11,7 +11,9 @@ import{MaterialModule} from'./material.module';
 import { PrimeModule } from './prime.madule';
 import { LibroComponent } from './libro/libro.component';
 import { LibroAlquiladoComponent } from './libro-alquilado/libro-alquilado.component';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {HttpClientModule} from "@angular/common/http";
+import { LoginService } from './services/login.services';
 
 @NgModule({
   declarations: [
@@ -30,9 +32,13 @@ import { LibroAlquiladoComponent } from './libro-alquilado/libro-alquilado.compo
     AppRoutes,
     BrowserAnimationsModule,
     MaterialModule,
-    PrimeModule
+    PrimeModule,
+    NgbModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    LoginService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

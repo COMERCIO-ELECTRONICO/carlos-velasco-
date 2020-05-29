@@ -4,38 +4,39 @@
     <div class="col-lg-6 col-md-6 d-none d-md-block image-container"></div>
 
     <div class="col-lg-6 col-md-6  form-container justify-content-center ">
+
       <div class="col-lg-8 col-md-12- col-sm-9 col-xs-12 form-box
       text-center
       ">
         <div class="logo mb-3">
-          <img src="carlos-velasco-\proyecto\img\user-icon-64.png" alt="">
+          <img src=".\assets\img\person.png" alt="" width="150">
         </div>
-        <div class="heading mb-4 ml-7 text-white font-weight-lighte">
-          <h4>LOGIN</h4>
-        </div>
-        <div class="form-input">
+        
+        <div class="form-input ">
+          
           <form>
             <div class="form-group">
-              <label class="text-white" >USUARIO</label>
+              <label class="text-white">USUARIO</label>
               <input type="text" class="form-control">
             </div>
             <div class="form-group">
               <label class="text-white">CONTRASEÑA</label>
               <input type="password" class="form-control">
             </div>
-            <button mat-raised-button [routerLink]="['/inicio']" class="mr-3" >INGRESAR</button>
-           
+            <button mat-raised-button [routerLink]="['/inicio']" class="mr-3">INGRESAR</button>
+
           </form>
-        <small>
-          <a [routerLink]="['/iniciar-sesion']" class="mb-3 text-white">
-            REGISTRASCE
-          </a>
-        </small>
-          
+          <small>
+            <a [routerLink]="['/iniciar-sesion']" class="mb-3 text-white mr-3">
+              REGISTRASCE
+            </a>
+          </small>
+       
         </div>
 
 
       </div>
     </div>
   </div>
+
 </div>
