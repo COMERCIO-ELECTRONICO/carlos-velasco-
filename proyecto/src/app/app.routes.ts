@@ -7,8 +7,8 @@ import { LoginComponent } from './login/login.component';
 import { IniciarSecionComponent } from './iniciar-secion/iniciar-secion.component';
 import { LibroComponent } from './libro/libro.component';
 import { LibroAlquiladoComponent } from './libro-alquilado/libro-alquilado.component';
-
-
+import { PerfilUserComponent } from './perfil-user/perfil-user.component';
+import { PerfilAdminComponent } from './perfil-admin/perfil-admin.component';
 const rutas: Routes = [
   {
     path: 'login',
@@ -18,6 +18,14 @@ const rutas: Routes = [
     {
       path: 'inicio',
       component: HomeComponent,
+    },
+    {
+      path: 'perfil-usuario',
+      component: PerfilUserComponent,
+    },
+    {
+      path: 'perfil-admin',
+      component: PerfilAdminComponent,
     },
     {
       path: 'iniciar-sesion',

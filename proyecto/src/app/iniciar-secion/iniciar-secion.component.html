@@ -4,27 +4,31 @@
         <form class="example-form  ">
             <mat-form-field class="example-full-width">
               <mat-label>Nombre</mat-label>
-              <input matInput placeholder="Nombre" >
+              <input matInput placeholder="Nombre" [(ngModel)]="Nombre" name="Nombre">
             </mat-form-field>
             <mat-form-field class="example-full-width">
                 <mat-label>Apellido</mat-label>
-                <input matInput placeholder="Apellido" >
+                <input matInput placeholder="Apellido"[(ngModel)]="Apellido" name="Apellido" >
               </mat-form-field>
               <mat-form-field class="example-full-width">
                 <mat-label>Direccion</mat-label>
-                <input matInput placeholder="Direccion" >
+                <input matInput placeholder="Direccion"[(ngModel)]="Direccion" name="Direccion" >
               </mat-form-field>
               <mat-form-field class="example-full-width">
                 <mat-label>Cedula</mat-label>
-                <input matInput placeholder="Cedula" >
+                <input matInput placeholder="Cedula"[(ngModel)]="Cedula" name="Cedula" >
               </mat-form-field>
               <mat-form-field class="example-full-width">
                 <mat-label>Usuario</mat-label>
-                <input matInput placeholder="Usuario" >
+                <input matInput placeholder="Usuario"[(ngModel)]="Usuario" name="Usuario" >
               </mat-form-field>
               <mat-form-field class="example-full-width">
                 <mat-label>Contraseña</mat-label>
-                <input matInput placeholder="Contraseña" >
+                <input matInput placeholder="Contraseña"[(ngModel)]="Contrasena" name="Contrasena" >
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-label>Edad</mat-label>
+                <input matInput placeholder="Edad"[(ngModel)]="Edad" name="Edad" >
               </mat-form-field>
               <button mat-raised-button color="primary" >Registrarce</button>
           </form>

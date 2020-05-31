@@ -7,13 +7,16 @@ import { LoginComponent } from './login/login.component';
 import { IniciarSecionComponent } from './iniciar-secion/iniciar-secion.component';
 import { AppRoutes } from './app.routes';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import{MaterialModule} from'./material.module';
+import { MaterialModule } from './material.module';
 import { PrimeModule } from './prime.madule';
 import { LibroComponent } from './libro/libro.component';
 import { LibroAlquiladoComponent } from './libro-alquilado/libro-alquilado.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {HttpClientModule} from "@angular/common/http";
+import { HttpClientModule } from "@angular/common/http";
 import { LoginService } from './services/login.services';
+import { PerfilAdminComponent } from './perfil-admin/perfil-admin.component';
+import { PerfilUserComponent } from './perfil-user/perfil-user.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,8 +27,10 @@ import { LoginService } from './services/login.services';
     IniciarSecionComponent,
     LibroComponent,
     LibroAlquiladoComponent,
-   
-    
+    PerfilAdminComponent,
+    PerfilUserComponent,
+
+
   ],
   imports: [
     BrowserModule,
@@ -34,7 +39,8 @@ import { LoginService } from './services/login.services';
     MaterialModule,
     PrimeModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     LoginService

@@ -8,6 +8,7 @@
       <div class="col-lg-8 col-md-12- col-sm-9 col-xs-12 form-box
       text-center
       ">
+       <H1 class="text-white">LOGIN</H1>
         <div class="logo mb-3">
           <img src=".\assets\img\person.png" alt="" width="150">
         </div>
@@ -17,11 +18,11 @@
           <form>
             <div class="form-group">
               <label class="text-white">USUARIO</label>
-              <input type="text" class="form-control">
+              <input type="text" class="form-control"   [(ngModel)]="user" name="user">
             </div>
             <div class="form-group">
               <label class="text-white">CONTRASEÑA</label>
-              <input type="password" class="form-control">
+              <input type="password" class="form-control"  [(ngModel)]="pass" name="pass">
             </div>
             <button mat-raised-button [routerLink]="['/inicio']" class="mr-3">INGRESAR</button>
 
