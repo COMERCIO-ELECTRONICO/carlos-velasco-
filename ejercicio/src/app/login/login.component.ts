@@ -26,7 +26,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private readonly _router: Router,
-    private readonly _LoginServices:LoginServices
+    private readonly _LoginServices:LoginServices,
+    private readonly _localStorage:Storage
   ) {}
 
   ngOnInit(): void {
@@ -65,6 +66,11 @@ export class LoginComponent implements OnInit {
 
 
   ingresar() {
+    localStorage
+    .setItem(
+      'nombre',JSON.stringify({npmbre:'carlos'})
+    )
+    
     this._LoginServices
     .metodopost(
       'http://localhost:1337/usuario',
@@ -110,8 +116,7 @@ export class LoginComponent implements OnInit {
             // localhost:9000/estudiante/perfil
       }
     } 
-     
-    
+      
   }
   eliminarRegitroPorId(){
     this._LoginServices

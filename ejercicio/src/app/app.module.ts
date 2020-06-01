@@ -18,6 +18,7 @@ import { CommonModule } from '@angular/common';
 import { PerilMaestroComponent } from './peril-maestro/peril-maestro.component';
 import {HttpClientModule} from "@angular/common/http";
 import { LoginServices } from './services/login.services';
+import { LoginGuard } from './guards/login.guard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import { LoginServices } from './services/login.services';
     HttpClientModule
   ],
   providers: [
-    LoginServices
+    LoginServices,
+    LoginGuard
   ],
   bootstrap: [AppComponent],
 })

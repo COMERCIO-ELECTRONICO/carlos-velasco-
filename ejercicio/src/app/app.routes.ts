@@ -6,6 +6,7 @@ import { IniciarSesionComponent } from './iniciar-sesion/iniciar-sesion.componen
 import { LoginComponent } from './login/login.component';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 import { PerilMaestroComponent } from './peril-maestro/peril-maestro.component'
+import { LoginGuard } from './guards/login.guard';
 const rutas: Routes = [
   {
     path: 'inicio',
@@ -32,6 +33,7 @@ const rutas: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+    canActivate:[LoginGuard]
   },
   {
     path: '',
