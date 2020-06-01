@@ -17,14 +17,15 @@
           
           <form>
             <div class="form-group">
+              <label></label>
               <label class="text-white">USUARIO</label>
-              <input type="text" class="form-control"   [(ngModel)]="user" name="user">
+              <input type="text" class="form-control"  [(ngModel)]="user" name="user">
             </div>
             <div class="form-group">
               <label class="text-white">CONTRASEÑA</label>
               <input type="password" class="form-control"  [(ngModel)]="pass" name="pass">
             </div>
-            <button mat-raised-button [routerLink]="['/inicio']" class="mr-3">INGRESAR</button>
+            <button mat-raised-button class="mr-3"(click)="ingresar()">INGRESAR</button>
 
           </form>
           <small>

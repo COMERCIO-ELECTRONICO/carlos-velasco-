@@ -17,7 +17,7 @@ import { LoginService } from './services/login.services';
 import { PerfilAdminComponent } from './perfil-admin/perfil-admin.component';
 import { PerfilUserComponent } from './perfil-user/perfil-user.component';
 import { FormsModule } from '@angular/forms';
-
+import{RegistroService }from'./services/registro.services';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +43,8 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ],
   providers: [
-    LoginService
+    LoginService,
+    RegistroService
   ],
   bootstrap: [AppComponent]
 })
