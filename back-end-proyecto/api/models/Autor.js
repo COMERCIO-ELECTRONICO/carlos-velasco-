@@ -17,6 +17,10 @@ module.exports = {
             columnType: "varchar",
             maxLength: 100,
             required: true
+        },
+       Libautid:{
+            collection:"libaut",
+            via:"autor_id"
         }
     }
 };

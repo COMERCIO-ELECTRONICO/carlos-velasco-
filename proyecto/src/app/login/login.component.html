@@ -17,7 +17,7 @@
           
           <form>
             <div class="form-group">
-              <label></label>
+              <label *ngIf="datos !== '' "></label>
               <label class="text-white">USUARIO</label>
               <input type="text" class="form-control"  [(ngModel)]="user" name="user">
             </div>

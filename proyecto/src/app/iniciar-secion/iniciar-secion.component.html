@@ -30,6 +30,17 @@
                 <mat-label>Edad</mat-label>
                 <input matInput placeholder="Edad"[(ngModel)]="Edad" name="Edad" required>
               </mat-form-field>
+              <mat-form-field>
+                <mat-label>Selecciona la Carrera</mat-label>
+                <mat-select [(value)]="selected">
+                  <mat-option>None</mat-option>
+                  <mat-option value="2" *ngIf="carrera1">{{carrera1}}</mat-option>
+                  <mat-option  value="3" *ngIf="carrera2">{{carrera2}}</mat-option>
+                  
+         
+                </mat-select>
+              </mat-form-field>
+
              
               <button mat-raised-button color="primary" (click)="registro()">Registrarce</button>
           </form>

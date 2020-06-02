@@ -23,6 +23,14 @@ module.exports = {
             columnType: "varchar",
             maxLength: 100,
             required: true
+        },
+        Libautid:{
+            collection:"libaut",
+            via:"LIBRO_ID"
+        },
+        Prestamoid:{
+            collection:"prestamo",
+            via:"prestamo_id"
         }
     }
 };

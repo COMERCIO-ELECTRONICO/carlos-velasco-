@@ -11,6 +11,10 @@ module.exports = {
             columnType: "varchar",
             maxLength: 11,
             required: true
+        },
+        Estudianteid:{
+collection:"estudiante",
+via:"carrera_id"
         }
     }
 };

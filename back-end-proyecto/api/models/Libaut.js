@@ -7,11 +7,9 @@ module.exports = {
     attributes: {
         LIBRO_ID: {
             model: "libro",
-            required: true
         },
-        AUTOR_ID: {
-            model: "autor",
-            required: true
+        autor_id:{
+            model:"autor"
         }
     }
 };

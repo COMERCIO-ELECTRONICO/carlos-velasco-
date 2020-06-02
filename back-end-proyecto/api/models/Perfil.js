@@ -13,10 +13,16 @@ module.exports = {
             required: true
         },
         CONTRASENA: {
-            type: "number",
-            columnType: "int",
-            isInteger: true,
+            type: "string",
+            columnType: "varchar",
+            maxLength: 100,
             required: true
-        }
+        },
+        Estudianteid:{
+            collection:"estudiante",
+            via:"perfil_id"
+            }
+
     }
+   
 };

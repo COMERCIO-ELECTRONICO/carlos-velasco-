@@ -7,6 +7,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
+import {MatSelectModule} from '@angular/material/select';
+import {MatDialogModule} from '@angular/material/dialog';
 @NgModule({
 imports:[
     MatToolbarModule,
@@ -15,7 +17,9 @@ imports:[
     MatGridListModule,
     MatCardModule,
     MatTableModule,
-    FormsModule
+    FormsModule,
+    MatSelectModule,
+    MatDialogModule
 ],
 exports:[
     MatToolbarModule,
@@ -24,7 +28,9 @@ exports:[
     MatGridListModule,
     MatCardModule,
     MatTableModule,
-    FormsModule
+    FormsModule,
+    MatSelectModule,
+    MatDialogModule
 
 ]
 

@@ -1,1 +1,75 @@
-<p>perfil-admin works!</p>
+<mat-toolbar class="navar-color">
+  <a mat-button class="text-white text-left" [routerLink]="[('/login')]">
+    <img src=".\assets\img\86918403-logotipo-de-librería-o-librería-para-diseño-web_phixr.png" alt="10%" width="10%">
+  </a>
+  <div class="spacer">
+    <h3>
+      LIBRERIA CADIW
+    </h3>
+  </div>
+  <a mat-button class="text-white">
+   
+
+  </a>
+
+  <a mat-button class="text-white">
+   
+  </a>
+  <div class="row">
+    <div class="col">
+      <div ngbDropdown class="d-inline-block">
+        <a mat-button id="dropdownForm1" ngbDropdownToggle><img src=".\assets\img\user-icon-32.png" alt=""></a>
+        <div ngbDropdownMenu aria-labelledby="dropdownForm1">
+          <form class="px-4 py-3">
+            <div class="form-group">
+              <label>Registrado como</label>
+              <input type="text" class="form-control"   value="ADMIN" disabled>
+            </div>
+            <button class="btn btn-primary" [routerLink]="['/login']">SALIR</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-toolbar>
+<div class="jumbotron mt-5">
+  <h1 class="display-4">HOLA ADMINISTRADOR</h1>
+  <p class="lead">Si quieres agregar un libro o carrera</p>
+  <hr class="my-4">
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <label>
+          CARRERA:
+        </label>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Nombre de la carrera"[(ngModel)]="nomcarrera" name="nomcarrera">
+        </div>
+      </div>
+      <div class="row mt-2">
+        <label>
+          LIBROS:
+        </label>
+        <div class="col">
+          <label>
+            TITULO
+          </label>
+          <input type="text" class="form-control" placeholder="Titulo" [(ngModel)]="titulolib" name="titulolib">
+        </div>
+        <div class="col">
+          <label>
+            EDITORIAL
+          </label>
+          <input type="text" class="form-control" placeholder="Editorial" [(ngModel)]="editoriarlib"name="titulolib">
+        </div>
+        <div class="col">
+          <label>
+            AREA
+          </label>
+          <input type="text" class="form-control" placeholder="Area" [(ngModel)]="arealib" name="titulolib">
+        </div>
+      </div>
+
+    </div>
+    <a class="btn btn-primary btn-lg" (click)="ingresar()" role="button">INGRESAR</a>
+  </div>

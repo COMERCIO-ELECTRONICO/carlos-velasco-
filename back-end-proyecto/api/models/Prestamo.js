@@ -23,6 +23,13 @@ module.exports = {
             columnType: "char",
             maxLength: 100,
             required: true
+        },
+        lector_id:{
+            model:"estudiante"
+        },
+       prestamo_id:{
+            model:"libro"
         }
+
     }
 };

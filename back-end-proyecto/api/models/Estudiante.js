@@ -29,6 +29,17 @@ module.exports = {
             columnType: "int",
             isInteger: true,
             required: true
+        },
+        perfil_id:{
+       model:"perfil"
+        },
+        carrera_id:{
+            model:"carrera"
+        },
+        Prestamoid:{
+collection:"prestamo",
+via:"lector_id"
         }
+
     }
 };

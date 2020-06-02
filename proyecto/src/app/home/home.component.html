@@ -21,7 +21,7 @@
         <a mat-button id="dropdownForm1" ngbDropdownToggle><img src=".\assets\img\user-icon-32.png" alt=""></a>
         <div ngbDropdownMenu aria-labelledby="dropdownForm1">
           <form class="px-4 py-3">
-            <div class="form-group">
+           <div class="form-group">
               <label>Registrado como</label>
               <input type="text" class="form-control" disabled>
             </div>
@@ -45,29 +45,39 @@
     <ngb-carousel *ngIf="images">
       <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
-          <img [src]="images[0]" alt="Random first slide">
+         <img src="https://image.freepik.com/vector-gratis/libros-coloridos-paquete_23-2147523336.jpg" alt="">
         </div>
         <div class="carousel-caption">
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3 class="text-dark">TODOS LOS LIBROS</h3>
+       
         </div>
       </ng-template>
       <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
-          <img [src]="images[1]" alt="Random second slide">
+        <img src="https://image.freepik.com/psd-gratis/plantilla-maqueta-portada-libro_68185-415.jpg" alt="">
         </div>
         <div class="carousel-caption">
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h3 class="text-dark">ENCUENTRA LO QUE BUSCAS</h3>
+          
+        </div>
+       
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+        <img src="https://image.freepik.com/vector-gratis/fondo-dia-mundial-libro-dibujado-mano_23-2148472565.jpg" alt="">
+        </div>
+        <div class="carousel-caption">
+          <h3 class="text-dark">NOVELAS Y MAS</h3>
+  
         </div>
       </ng-template>
       <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
-          <img [src]="images[2]" alt="Random third slide">
+        <img src="https://image.freepik.com/foto-gratis/reservar-sala-biblioteca_36325-102.jpg" alt="">
         </div>
         <div class="carousel-caption">
-          <h3>Third slide label</h3>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          <h3></h3>
+        
         </div>
       </ng-template>
     </ngb-carousel>
