@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵConsole } from '@angular/core';
 import { Router } from '@angular/Router';
 import {  RegistroService} from '../services/registro.services';
 @Component({
@@ -14,8 +14,8 @@ export class IniciarSecionComponent implements OnInit {
   Usuario='';
   Contrasena='';
   Edad:number;
-  carrera1='';
-  carrera2='';
+  carrera1;
+  idperf;
   selected='';
 carreraid;
   constructor(
@@ -29,13 +29,7 @@ carreraid;
     .subscribe((resultadoMetodoGet) => {
       console.log('Respuest de Get');
       console.log(resultadoMetodoGet);
-
-    this.carrera1=(resultadoMetodoGet[0].NOMBRE_CARRERA)
-    this.carrera2=(resultadoMetodoGet[1].NOMBRE_CARRERA)
-    
- 
-     
-   
+    this.carrera1=(resultadoMetodoGet)
     });
   }
 
@@ -50,38 +44,42 @@ alert('solo numeros')
 }
 else{
   
-  this._RegistroService
-  .metodoPost('http://localhost:1337/Estudiante',{
-   CI_ESTUDIANTE:this.Cedula,
-    NOMBRE_ESTUDIANTE:this.Nombre,
-   DIRECCION_ESTUDIANTE:this.Direccion,
-    EDAD_ESTUDIANTE:this.Edad,
-    carrera_id:this.carreraid
-
-  })
-  .subscribe((resultadoMetodopost) => {
-    console.log('Respuest de pos');
-    console.log({resultadoMetodopost});
-    console.log('datos ingresados');
-   
-  });
+  
   this._RegistroService
   .metodoPost('http://localhost:1337/Perfil',{
-    
   USUARIO:this.Usuario,
     CONTRASENA:this.Contrasena
+
   })
-  .subscribe((resultadoMetodopost) => {
-    console.log('Respuest de pos');
-    console.log({resultadoMetodopost});
-    console.log('datos ingresados');
-   
+  .subscribe((resultadoperfil:any) => { 
+this.idperf=resultadoperfil.id
+console.log(this.idperf)
+    this._RegistroService
+    .metodoPost('http://localhost:1337/Estudiante',{
+     CI_ESTUDIANTE:this.Cedula,
+      NOMBRE_ESTUDIANTE:this.Nombre,
+     DIRECCION_ESTUDIANTE:this.Direccion,
+      EDAD_ESTUDIANTE:this.Edad,
+      carrera_id:this.selected,
+      perfil_id:this.idperf
+
+  
+    })
+    .subscribe((resultadoPost:any)=>{ 
+      this._Router.navigate(
+        ['/login']
+        )
+console.log(resultadoPost)
+    })
   });
   
-  this._Router.navigate(
-    ['/login']
-    )
+  
 }
    
+  }
+
+  camposelec(event){
+    console.log(this.selected)
+console.log(event)
   }
 }

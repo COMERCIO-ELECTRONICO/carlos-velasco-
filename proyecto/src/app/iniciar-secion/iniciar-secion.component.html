@@ -1,5 +1,5 @@
 <div class="container-form  d-flex  ">
-    <p-card class="stile-form " header="DATOS PERSONALES " [style]="{width: '360px'}">
+    <p-card class="stile-form " header="REGISTRO" [style]="{width: '360px'}">
         
         <form class="example-form  ">
             <mat-form-field class="example-full-width">
@@ -32,16 +32,10 @@
               </mat-form-field>
               <mat-form-field>
                 <mat-label>Selecciona la Carrera</mat-label>
-                <mat-select [(value)]="selected">
-                  <mat-option>None</mat-option>
-                  <mat-option value="2" *ngIf="carrera1">{{carrera1}}</mat-option>
-                  <mat-option  value="3" *ngIf="carrera2">{{carrera2}}</mat-option>
-                  
-         
+                <mat-select [(value)]="selected" (selectionChange)='camposelec($event)'  >
+                  <mat-option  *ngFor=" let carreraid of carrera1" [value]="carreraid.id">{{carreraid["NOMBRE_CARRERA"]}}</mat-option>
                 </mat-select>
-              </mat-form-field>
-
-             
+              </mat-form-field>            
               <button mat-raised-button color="primary" (click)="registro()">Registrarce</button>
           </form>
 

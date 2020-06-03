@@ -34,9 +34,50 @@
 </mat-toolbar>
 <div class="jumbotron mt-5">
   <h1 class="display-4">HOLA ADMINISTRADOR</h1>
-  <p class="lead">Si quieres agregar un libro o carrera</p>
+  <p class="lead">DATOS DE CARRERA , LIBRO Y AUTOR</p>
+  
+  <p>
+    <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
+            [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+        AUTOR
+    </button>
+  </p>
+  <div id="collapseExample" [ngbCollapse]="isCollapsed">
+    <div class="card">
+      <div class="card-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col" >NOMBRE</th>
+              <th scope="col">NACIONALIDAD</th>
+              <th scope="col">EDITAR</th>
+              <th scope="col">ELIMINAR</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr  *ngFor=" let datos of datosautor">
+              <th scope="row">{{datos["id"]}}</th>
+              <td>{{datos["NOMBRE_AUTOR"]}}</td>
+              <td>{{datos["NACIONALIDAD"]}}</td>
+              <td>
+                <button type="button" class="btn btn-success "(click)="actualizarautor()" >Actualizar</button>
+              
+              </td>
+              <td>
+                <button type="button" class="btn btn-danger" (click)="eliminarautor()">Eliminar</button>
+              </td>
+            </tr>
+          
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
   <hr class="my-4">
   <div class="card">
+    
     <div class="card-body">
       <div class="row">
         <label>
@@ -46,7 +87,7 @@
           <input type="text" class="form-control" placeholder="Nombre de la carrera"[(ngModel)]="nomcarrera" name="nomcarrera">
         </div>
       </div>
-      <div class="row mt-2">
+      <div class="row mt-5">
         <label>
           LIBROS:
         </label>
@@ -60,16 +101,34 @@
           <label>
             EDITORIAL
           </label>
-          <input type="text" class="form-control" placeholder="Editorial" [(ngModel)]="editoriarlib"name="titulolib">
+          <input type="text" class="form-control" placeholder="Editorial" [(ngModel)]="editoriarlib"name="editoriarlib">
         </div>
         <div class="col">
           <label>
             AREA
           </label>
-          <input type="text" class="form-control" placeholder="Area" [(ngModel)]="arealib" name="titulolib">
+          <input type="text" class="form-control" placeholder="Area" [(ngModel)]="arealib" name="arealib">
         </div>
       </div>
-
+      <div class="row mt-5">
+        <label>
+          AUTOR :
+        </label>
+        <div class="col">
+          <label>
+            NOMBRE
+          </label>
+          <input type="text" class="form-control" placeholder="Nombre del Autor" name="autnom">
+        </div>
+        <div class="col">
+          <label>
+            NACIONALIDAD
+          </label>
+          <input type="text" class="form-control" placeholder="Nacionalidad del Autor" name="nacioaut">
+        </div>
+      </div>
     </div>
     <a class="btn btn-primary btn-lg" (click)="ingresar()" role="button">INGRESAR</a>
+
+    
   </div>

@@ -1,31 +1,38 @@
-<table class="table">
+<div class="container">
   
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">BENVENIDO</h1>
+        <h2 class="display-4">{{nombreEs}}</h2>
+        <p class="lead">Aqui puedes ver tus libros alquilados</p>
+      </div>
+    </div>
+
+  <div class="row">
+    <table class="table">
+  
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col" >FECHA_PRESTAMO</th>
+          <th scope="col">FECHA_DEVOLUCION</th>
+          <th scope="col">LIBRO</th>
+          <th scope="col">ENTRGAR</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr  *ngFor=" let datos of prestamo  ">
+          <th scope="row" >{{datos["id"]}}</th>
+          <td>{{datos["FECHA_PRESTAMO"]}}</td>
+          <td>{{datos["FECHA_DEVOLUCION"]}}</td>
+          <td>{{datos["prestamo_id.TITULO"]}}</td>
+          <td>    <button type="button" class="btn btn-danger">ENTREGAR</button></td>
+        </tr>
+      
+      </tbody>
+    </table>
+  </div>
+</div>
+
+

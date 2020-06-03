@@ -11,6 +11,13 @@ nomcarrera='';
 titulolib='';
 editoriarlib='';
 arealib='';
+datoslibro;
+datosautor;
+datoscarrera;
+nombreau='';
+nacioaut;
+autnom='';
+public isCollapsed = true;
   constructor(
     private readonly _AdminServicervice:AdminService,
     private readonly _router:Router
@@ -18,6 +25,21 @@ arealib='';
 
   ngOnInit(): void {
    
+    this._AdminServicervice
+    .metodoGet('http://localhost:1337/Libro')
+    .subscribe((resultadoMetodoGet) => {
+    this.datoslibro=(resultadoMetodoGet)
+    });
+    this._AdminServicervice
+    .metodoGet('http://localhost:1337/Autor')
+    .subscribe((resultadoMetodoGet) => {
+    this.datosautor=(resultadoMetodoGet)
+    });
+    this._AdminServicervice
+    .metodoGet('http://localhost:1337/Carrera')
+    .subscribe((resultadoMetodoGet) => {
+    this.datoscarrera=(resultadoMetodoGet)
+    });
   }
   
  
@@ -61,7 +83,28 @@ alert('NO INGRESO LIBRO')
       ['/perfil-admin']
     )
   }
+
+    this._AdminServicervice
+  .metodoPost('http://localhost:1337/Autor',{
+    NOMBRE_AUTOR:this.nomcarrera,
+    NACIONALIDAD:this.nacioaut
+   })
+   .subscribe((resultadoautorpost) => {
+     console.log('Respuest de pos');
+     console.log(resultadoautorpost);
+     console.log('datos ingresados');
     
+   });
+
+
     
   }
+  actualizarautor(){}
+              
+  eliminarautor(){}
+
+
+
+
+
 }

@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 export class LoginService {
   constructor(private readonly _httpClient: HttpClient) {}
 
-  metodoGet(url: string) {
+  metodoGet(url: string, ) {
     return this._httpClient.get(url);
   }
 

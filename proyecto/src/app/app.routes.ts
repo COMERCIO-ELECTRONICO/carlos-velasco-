@@ -16,7 +16,7 @@ const rutas: Routes = [
   },
  
     {
-      path: 'inicio',
+      path: 'inicio/:id',
       component: HomeComponent,
     },
     {
@@ -33,11 +33,11 @@ const rutas: Routes = [
     },
     
     {
-      path: 'libro',
+      path: 'libro/:id',
       component: LibroComponent,
     },
     {
-      path: 'alquilados',
+      path: 'alquilados/:id',
       component: LibroAlquiladoComponent,
     },
     {
