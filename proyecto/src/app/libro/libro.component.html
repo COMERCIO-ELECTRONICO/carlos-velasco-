@@ -1,23 +1,28 @@
-<table class="table">
+
+
+    <table class="table">
   
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col" >TITULO</th>
-      <th scope="col">EDITORIAL</th>
-      <th scope="col">AREA</th>
-      <th scope="col">ALQUILAR</th>
-     
-    </tr>
-  </thead>
-  <tbody>
-    <tr  *ngFor=" let datos of libro  ; let autor of autor">
-      <th scope="row" >{{datos["id"]}}</th>
-      <td>{{datos["TITULO"]}}</td>
-      <td>{{datos["EDITORIAL"]}}</td>
-      <td>{{datos["AREA"]}}</td>
-      <td> <button type="button" class="btn btn-success"(click)="alquilar()">Alquilar</button></td>
-    </tr>
-  
-  </tbody>
-</table>
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col" >TITULO</th>
+          <th scope="col">EDITORIAL</th>
+          <th scope="col">AREA</th>
+          <th scope="col">ALQUILAR</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr  *ngFor=" let datos of libro  ">
+          <th scope="row" >{{datos["id"]}}</th>
+          <td>{{datos["TITULO"]}}</td>
+          <td>{{datos["EDITORIAL"]}}</td>
+          <td>{{datos["AREA"]}}</td>
+          <td>    <button type="button" class="btn btn-danger" (click)="alquilar(datos.id)" >ALQUILAR</button></td>
+        </tr>
+      
+      </tbody>
+    </table>
+
+
+

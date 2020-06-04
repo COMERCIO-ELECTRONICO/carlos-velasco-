@@ -19,6 +19,8 @@ import { PerfilUserComponent } from './perfil-user/perfil-user.component';
 import { FormsModule } from '@angular/forms';
 import{RegistroService }from'./services/registro.services';
 import { AdminService } from './services/admin.services';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {TabViewModule} from 'primeng/tabview';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +32,7 @@ import { AdminService } from './services/admin.services';
     LibroAlquiladoComponent,
     PerfilAdminComponent,
     PerfilUserComponent,
+ 
 
 
   ],
@@ -41,7 +44,10 @@ import { AdminService } from './services/admin.services';
     PrimeModule,
     NgbModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatToolbarModule,
+    TabViewModule
+ 
   ],
   providers: [
     LoginService,

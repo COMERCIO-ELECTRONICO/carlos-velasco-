@@ -8,14 +8,14 @@ module.exports = {
         
         FECHA_PRESTAMO: {
             type: "string",
-            columnType: "char",
-            maxLength: 10,
+           
+            maxLength: 100,
             required: true
         },
         FECHA_DEVOLUCION: {
             type: "string",
-            columnType: "char",
-            maxLength: 10,
+            
+            maxLength: 100,
             required: true
         },
         DEVUELTO: {

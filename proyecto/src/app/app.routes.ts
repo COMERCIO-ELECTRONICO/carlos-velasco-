@@ -24,7 +24,7 @@ const rutas: Routes = [
       component: PerfilUserComponent,
     },
     {
-      path: 'perfil-admin',
+      path: 'perfil-admin/:id',
       component: PerfilAdminComponent,
     },
     {

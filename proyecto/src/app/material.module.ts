@@ -9,6 +9,7 @@ import {MatTableModule} from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import {MatDialogModule} from '@angular/material/dialog';
+
 @NgModule({
 imports:[
     MatToolbarModule,
@@ -19,7 +20,8 @@ imports:[
     MatTableModule,
     FormsModule,
     MatSelectModule,
-    MatDialogModule
+    MatDialogModule,
+   
 ],
 exports:[
     MatToolbarModule,
@@ -30,7 +32,8 @@ exports:[
     MatTableModule,
     FormsModule,
     MatSelectModule,
-    MatDialogModule
+    MatDialogModule,
+    
 
 ]
 

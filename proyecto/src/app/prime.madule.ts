@@ -5,6 +5,7 @@ import {CarouselModule} from 'primeng/carousel';
 import {DragDropModule} from 'primeng/dragdrop';
 import { TableModule } from 'primeng/table';
 import { FormsModule } from '@angular/forms';
+import {TabViewModule} from 'primeng/tabview';
 @NgModule({
 imports:[
     ButtonModule,
@@ -12,7 +13,8 @@ imports:[
     CarouselModule,
     DragDropModule,
     TableModule,
-    FormsModule
+    FormsModule,
+    TabViewModule
 ],
 exports:[
     ButtonModule,
@@ -20,7 +22,8 @@ exports:[
     CarouselModule,
     DragDropModule,
     TableModule,
-    FormsModule
+    FormsModule,
+    TabViewModule
 ]
 
 })

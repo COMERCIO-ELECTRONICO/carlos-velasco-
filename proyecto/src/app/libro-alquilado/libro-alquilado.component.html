@@ -1,15 +1,15 @@
-<div class="container">
-  
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-4">BENVENIDO</h1>
-        <h2 class="display-4">{{nombreEs}}</h2>
-        <p class="lead">Aqui puedes ver tus libros alquilados</p>
-      </div>
-    </div>
 
+<div class="jumbotron jumbotron-fluid container-l">
+  <div class="container">
+    <h1 class="display-4">BENVENIDO</h1>
+    <h2 class="display-4">{{nombreEs}}</h2>
+    <p class="lead">Aqui puedes ver tus libros alquilados</p>
+  </div>
+  <button (click)="regresar()">REGRESAR</button>
+</div>
+<div class="container">
   <div class="row">
-    <table class="table">
+    <table class="table" *ngIf="prestamo">
   
       <thead>
         <tr>
@@ -26,8 +26,8 @@
           <th scope="row" >{{datos["id"]}}</th>
           <td>{{datos["FECHA_PRESTAMO"]}}</td>
           <td>{{datos["FECHA_DEVOLUCION"]}}</td>
-          <td>{{datos["prestamo_id.TITULO"]}}</td>
-          <td>    <button type="button" class="btn btn-danger">ENTREGAR</button></td>
+          <td>{{datos.prestamo_id.TITULO}}</td>
+          <td> <button type="button" class="btn btn-danger"(click)="enviarid(datos.id)">ENTREGAR</button></td>
         </tr>
       
       </tbody>

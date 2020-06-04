@@ -35,12 +35,15 @@ export class LoginComponent implements OnInit {
     this.adminuser=(resultadoMetodoGet[0].USUARIO);
     this.adminpass=(resultadoMetodoGet[0].CONTRASENA)
     this.iduser=(resultadoMetodoGet[0].Estudianteid[0].id)
+
     console.log('usuario')
     console.log(this.iduser)
-    if (this.pass === 'admin'&& this.user==='admin') {
+   if(this.pass===''&& this.user===''){
+alert('Campos Vacios /n Por Favor Complete')
+   }else if (this.pass === 'admin'&& this.user==='admin') {
       alert('ADMINNISTRADOR')
       this._router.navigate(
-        ['/perfil-admin']
+        [`/perfil-admin/`+this.iduser]
       )
     }else if(this.user===this.adminuser && this.pass===this.adminpass){
       alert('Bienvenido:'+this.adminuser)
@@ -53,6 +56,7 @@ export class LoginComponent implements OnInit {
       alert('USUARIO NO EXISTE')
       
      }
+     alert('REGISTRO EXITOSO')
     });
    
 

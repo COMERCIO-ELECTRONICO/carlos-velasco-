@@ -7,52 +7,55 @@ import { ActivatedRoute, Params } from '@angular/Router';
   styleUrls: ['./libro.component.css']
 })
 export class LibroComponent implements OnInit {
-  libro;
+libro;
 datos;
-fech=new Date();
+fech='05/06/2020';
+dev;
+devueleto;
 iduser;
+id;
+
   constructor(
 private readonly _libroservice:AdminService,
 private rutaDatos: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    this._libroservice
-    .metodoGet('http://localhost:1337/Libro')
-    .subscribe((resultadoMetodoGet:any) => {
-    this.libro=(resultadoMetodoGet)
-    
-    console.log(this.libro);
-    this.datos=(resultadoMetodoGet.id)
-    console.log(this.datos);
-    console.log('prueba');
-    resultadoMetodoGet.forEach(element => console.log(element.TITULO));
-    console.log(this.fech);
     this.iduser = {
       id: this.rutaDatos.snapshot.params.id,  
     };
-
-    console.log('id---');
+    console.log('user id:')
+    this.id=(this.iduser.id)
+    console.log(this.id)
+   this._libroservice
+.metodoGet('http://localhost:1337/libro')
+.subscribe((resultadolibro)=>{
+  this.libro=(resultadolibro)
+})
     
-    console.log(this.iduser.id);
-    
-    });
   }
-  alquilar(){
-    this._libroservice
-    .metodoPost('http://localhost:1337/Prestamo',{
-      FECHA_PRESTAMO:'this.fech',
-      FECHA_DEVOLUCION:'no',
-      DEVUELTO:	'no',
-      lector_id:this.iduser.id,
-      prestamo_id:this.libro.id
+  
+  alquilar(datos){ 
+    this._libroservice .metodoPost('http://localhost:1337/prestamo',{
+ 
+  FECHA_PRESTAMO:this.fech,
+  FECHA_DEVOLUCION:this.dev,
+  DEVUELTO:this.iduser ,
+  lector_id:this.id,
+  prestamo_id:this.datos
+})
+.subscribe((resultadoalquilar)=>{
+  alert('LIBRO ALQUILADO ')
+  alert(datos)
+  console.log(resultadoalquilar);
+                  
+})
 
-    }).subscribe(()=>{
-alert('LIBRO ALQUILADO')
-
-    })
-  }
-
+}
 
 
 }
+
+
+
+
