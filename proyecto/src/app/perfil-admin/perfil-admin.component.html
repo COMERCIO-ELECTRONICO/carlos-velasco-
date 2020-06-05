@@ -35,89 +35,338 @@
 <div class="jumbotron mt-5">
   <h1 class="display-4">HOLA ADMINISTRADOR</h1>
   <p class="lead">DATOS DE CARRERA , LIBRO Y AUTOR</p>
-  
-
   <div class="card">
     <p-tabView>
-      <p-tabPanel header="LIBRO">
-        <div class="card">
-          <div class="card-body">
-            <div class="row mt-5">
-              <label>
-                LIBROS:
-              </label>
-              <div class="col">
-                <label>
-                  TITULO
-                </label>
-                <input type="text" class="form-control" placeholder="Titulo" [(ngModel)]="titulolib" name="titulolib">
-              </div>
-              <div class="col">
-                <label>
-                  EDITORIAL
-                </label>
-                <input type="text" class="form-control" placeholder="Editorial" [(ngModel)]="editoriarlib"
-                  name="editoriarlib">
-              </div>
-              <div class="col">
-                <label>
-                  AREA
-                </label>
-                <input type="text" class="form-control" placeholder="Area" [(ngModel)]="libarea" name="libarea">
-              </div>
-            </div>
-           
-          </div>
-        
-          <div class="card-body">
-            <div class="row mt-5">
-              <label>
-                AUTOR :
-              </label>
-              <div class="col">
-                <label>
-                  NOMBRE
-                </label>
-                <input type="text" class="form-control" placeholder="Nombre del Autor" [(ngModel)]="autnom"
-                  name="autnom">
-              </div>
-              <div class="col">
-                <label>
-                  NACIONALIDAD
-                </label>
-                <input type="text" class="form-control" placeholder="Nacionalidad del Autor" [(ngModel)]="nacioaut"
-                  name="nacioaut">
-              </div>
-            </div>
-            
-          </div>
-        </div>
-        <a class="btn btn-primary btn-lg mt-3" (click)="ingresardatos()" role="button">INGRESAR</a>
-      </p-tabPanel>
       <p-tabPanel header="LIBROS">
-        
-      
-      </p-tabPanel>
-      <p-tabPanel header="CARRERA">
-        <div class="card">
-          <div class="card-body">
+        <p-tabView>
+          <p-tabPanel header="Ingresar">
             <div class="card-body">
-              <div class="row">
+              <div class="row mt-5">
                 <label>
-                  CARRERA:
+                  LIBROS:
                 </label>
                 <div class="col">
-                  <input type="text" class="form-control" placeholder="Nombre de la carrera" [(ngModel)]="nomcarrera"
-                    name="nomcarrera">
+                  <label>
+                    TITULO
+                  </label>
+                  <input type="text" class="form-control" placeholder="Titulo" [(ngModel)]="titulolib" name="titulolib">
+                </div>
+                <div class="col">
+                  <label>
+                    EDITORIAL
+                  </label>
+                  <input type="text" class="form-control" placeholder="Editorial" [(ngModel)]="editoriarlib"
+                    name="editoriarlib">
+                </div>
+                <div class="col">
+                  <label>
+                    AREA
+                  </label>
+                  <input type="text" class="form-control" placeholder="Area" [(ngModel)]="libarea" name="libarea">
                 </div>
               </div>
 
+            </div>
+            <div class="card-body">
+              <div class="row mt-5">
+                <label>
+                  AUTOR :
+                </label>
+                <div class="col">
+                  <label>
+                    NOMBRE
+                  </label>
+                  <input type="text" class="form-control" placeholder="Nombre del Autor" [(ngModel)]="autnom"
+                    name="autnom">
+                </div>
+                <div class="col">
+                  <label>
+                    NACIONALIDAD
+                  </label>
+                  <input type="text" class="form-control" placeholder="Nacionalidad del Autor" [(ngModel)]="nacioaut"
+                    name="nacioaut">
+                </div>
+              </div>
 
             </div>
-         
-          </div>
-        </div>
-        <a class="btn btn-primary btn-lg" (click)="ingresarcarrera()" role="button">INGRESAR</a>
+            <a class="btn btn-primary btn-lg mt-3" (click)="ingresardatos()" role="button">INGRESAR</a>
+          </p-tabPanel>
+          <p-tabPanel header="actulaizar">
+            <p-tabView>
+              <p-tabPanel header="Libros">
+                <p-table [value]="datoslib">
+                  <ng-template pTemplate="header">
+                    <tr>
+                      <th>ID</th>
+                      <th>NOMBRE</th>
+                      <th>EDITORIAL</th>
+                      <th>AREA</th>
+                      <th>ACTUALIZAR</th>
+                    </tr>
+                  </ng-template>
+                  <ng-template pTemplate="body" let-rowData>
+                    <tr>
+                      <td pEditableColumn>
+                        <p-cellEditor>
+                          <ng-template pTemplate="input">
+                            <input pInputText type="text" [(ngModel)]="rowData.id">
+                          </ng-template>
+                          <ng-template pTemplate="output">
+                            {{rowData.id}}
+                          </ng-template>
+                        </p-cellEditor>
+                      </td>
+                      <td pEditableColumn>
+                        <p-cellEditor>
+                          <ng-template pTemplate="input">
+                            <input pInputText type="text" [(ngModel)]="rowData.TITULO">
+                          </ng-template>
+                          <ng-template pTemplate="output">
+                            {{rowData.TITULO}}
+                          </ng-template>
+                        </p-cellEditor>
+                      </td>
+                      <td pEditableColumn>
+                        <p-cellEditor>
+                          <ng-template pTemplate="input">
+                            <input pInputText type="text" [(ngModel)]="rowData.EDITORIAL">
+                          </ng-template>
+                          <ng-template pTemplate="output">
+                            {{rowData.EDITORIAL}}
+                          </ng-template>
+                        </p-cellEditor>
+                      </td>
+                      <td pEditableColumn>
+                        <p-cellEditor>
+                          <ng-template pTemplate="input">
+                            <input pInputText type="text" [(ngModel)]="rowData.AREA">
+                          </ng-template>
+                          <ng-template pTemplate="output">
+                            {{rowData.AREA}}
+                          </ng-template>
+                        </p-cellEditor>
+                      </td>
+                      <td pEditableColumn>
+                        <button pButton type="button" label="Actualizar" class="ui-button-success"
+                          (click)="actualizarlibro(rowData)"></button>
+                      </td>
+                    </tr>
+                  </ng-template>
+                </p-table>
+              </p-tabPanel>
+              <p-tabPanel header="Autores">
+                <p-table [value]="datosgenerales">
+                  <ng-template pTemplate="header">
+                    <tr>
+                      <th>ID</th>
+                      <th>NOMBRE_AUTOR</th>
+                      <th>NACIONALIDAD</th>
+
+                      <th>ACTUALIZAR</th>
+                    </tr>
+                  </ng-template>
+                  <ng-template pTemplate="body" let-rowData>
+                    <tr>
+                      <td pEditableColumn>
+                        <p-cellEditor>
+                          <ng-template pTemplate="input">
+                            <input pInputText type="text" [(ngModel)]="rowData.id">
+                          </ng-template>
+                          <ng-template pTemplate="output">
+                            {{rowData.id}}
+                          </ng-template>
+                        </p-cellEditor>
+                      </td>
+                      <td pEditableColumn>
+                        <p-cellEditor>
+                          <ng-template pTemplate="input">
+                            <input pInputText type="text" [(ngModel)]="rowData.NOMBRE_AUTOR">
+                          </ng-template>
+                          <ng-template pTemplate="output">
+                            {{rowData.NOMBRE_AUTOR}}
+                          </ng-template>
+                        </p-cellEditor>
+                      </td>
+                      <td pEditableColumn>
+                        <p-cellEditor>
+                          <ng-template pTemplate="input">
+                            <input pInputText type="text" [(ngModel)]="rowData.NACIONALIDAD">
+                          </ng-template>
+                          <ng-template pTemplate="output">
+                            {{rowData.NACIONALIDAD}}
+                          </ng-template>
+                        </p-cellEditor>
+                      </td>
+
+                      <td pEditableColumn>
+                        <button pButton type="button" label="Actualizar" class="ui-button-success"
+                          (click)="actualizarautor(rowData)"></button>
+                      </td>
+                    </tr>
+                  </ng-template>
+                </p-table>
+              </p-tabPanel>
+            </p-tabView>
+          </p-tabPanel>
+          <p-tabPanel header="eliminar">
+            <p-tabView>
+              <p-tabPanel header="Libro">
+                <p-table [value]="datoslib" *ngIf="datoslib">
+                  <ng-template pTemplate="header">
+                    <tr>
+                      <th>ID</th>
+                      <th>NOMBRE</th>
+                      <th>EDITORIAL</th>
+                      <th>AREA</th>
+                      <th>ACTUALIZAR</th>
+                    </tr>
+                  </ng-template>
+                  <ng-template pTemplate="body" let-rowData>
+                    <tr>
+                      <td pEditableColumn>
+                        {{rowData.id}}
+                      </td>
+                      <td pEditableColumn>
+                        {{rowData.TITULO}}
+                      </td>
+                      <td pEditableColumn>
+                        {{rowData.EDITORIAL}}
+                      </td>
+                      <td pEditableColumn>
+                        {{rowData.AREA}}
+                      </td>
+                      <td pEditableColumn>
+                        <button pButton type="button" label="Eliminar" class="ui-button-danger"
+                          (click)="eliminarlibro(rowData.id)"></button>
+                      </td>
+                    </tr>
+                  </ng-template>
+                </p-table>
+
+              </p-tabPanel>
+              <p-tabPanel header="Autor">
+                <p-table [value]="datosgenerales">
+                  <ng-template pTemplate="header">
+                    <tr>
+                      <th>ID</th>
+                      <th>NOMBRE_AUTOR</th>
+                      <th>NACIONALIDAD</th>
+
+                      <th>ACTUALIZAR</th>
+                    </tr>
+                  </ng-template>
+                  <ng-template pTemplate="body" let-rowData>
+                    <tr>
+                      <td pEditableColumn>
+
+                        {{rowData.id}}
+
+                      </td>
+                      <td pEditableColumn>
+
+                        {{rowData.NOMBRE_AUTOR}}
+
+                      </td>
+                      <td pEditableColumn>
+
+                        {{rowData.NACIONALIDAD}}
+
+                      </td>
+
+                      <td pEditableColumn>
+                        <button pButton type="button" label="Eliminar" class="ui-button-danger"
+                          (click)="eliminarautro(rowData.id)"></button>
+                      </td>
+                    </tr>
+                  </ng-template>
+                </p-table>
+
+              </p-tabPanel>
+            </p-tabView>
+          </p-tabPanel>
+        </p-tabView>
+      </p-tabPanel>
+      <p-tabPanel header="Carrera">
+        <p-tabView>
+          <p-tabPanel header="Ingresar">
+            <div class="card-body">
+              <div class="card-body">
+                <div class="row">
+                  <label>
+                    CARRERA:
+                  </label>
+                  <div class="col">
+                    <input type="text" class="form-control" placeholder="Nombre de la carrera" [(ngModel)]="nomcarrera"
+                      name="nomcarrera">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a class="btn btn-primary btn-lg" (click)="ingresarcarrera()" role="button">INGRESAR</a>
+          </p-tabPanel>
+          <p-tabPanel header="Actualizar">
+            <p-table [value]="datoscarrera">
+              <ng-template pTemplate="header">
+                <tr>
+                  <th>ID</th>
+                  <th>NOMBRE</th>
+                  <th>ACTUALIZAR</th>
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-rowData>
+                <tr>
+                  <td pEditableColumn>
+                    <p-cellEditor>
+                      <ng-template pTemplate="output">
+                        {{rowData.id}}
+                      </ng-template>
+                    </p-cellEditor>
+                  </td>
+                  <td pEditableColumn>
+                    <p-cellEditor>
+                      <ng-template pTemplate="input">
+                        <input pInputText type="text" [(ngModel)]="rowData.NOMBRE_CARRERA">
+                      </ng-template>
+                      <ng-template pTemplate="output">
+                        {{rowData.NOMBRE_CARRERA}}
+                      </ng-template>
+                    </p-cellEditor>
+                  </td>
+
+                  <td pEditableColumn>
+                    <button pButton type="button" label="Success" class="ui-button-success"
+                      (click)="actualizarcarrera(rowData)"></button>
+                  </td>
+                </tr>
+              </ng-template>
+            </p-table>
+          </p-tabPanel>
+          <p-tabPanel header="eliminar">
+            <p-table [value]="datoscarrera">
+              <ng-template pTemplate="header">
+                <tr>
+                  <th>ID</th>
+                  <th>NOMBRE</th>
+                  <th>ACTUALIZAR</th>
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-rowData1>
+                <tr>
+                  <td pEditableColumn>
+                    {{rowData1.id}}
+                  </td>
+                  <td pEditableColumn>
+                    {{rowData1.NOMBRE_CARRERA}}
+                  </td>
+                  <td pEditableColumn>
+                    <button pButton type="button" label="Eliminar" class="ui-button-danger"
+                      (click)="eliminarcarrera(rowData1.id)"></button>
+                  </td>
+                </tr>
+              </ng-template>
+            </p-table>
+          </p-tabPanel>
+        </p-tabView>
       </p-tabPanel>
     </p-tabView>
   </div>

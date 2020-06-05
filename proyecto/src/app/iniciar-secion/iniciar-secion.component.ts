@@ -66,6 +66,7 @@ console.log(this.idperf)
   
     })
     .subscribe((resultadoPost:any)=>{ 
+      alert('REGISTRO EXITOSO')
       this._Router.navigate(
         ['/login']
         )

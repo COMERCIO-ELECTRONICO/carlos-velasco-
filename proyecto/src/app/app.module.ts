@@ -21,6 +21,7 @@ import{RegistroService }from'./services/registro.services';
 import { AdminService } from './services/admin.services';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {TabViewModule} from 'primeng/tabview';
+import {MessageService} from 'primeng/api';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +53,8 @@ import {TabViewModule} from 'primeng/tabview';
   providers: [
     LoginService,
     RegistroService,
-    AdminService
+    AdminService,
+    MessageService
   ],
   bootstrap: [AppComponent]
 })

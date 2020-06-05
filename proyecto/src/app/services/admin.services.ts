@@ -13,7 +13,7 @@ export class AdminService {
     return this._httpClient.post(url, datos);
   }
 
-  metodoPut(url: string, dataAEditar) {
+  metodoPatch(url: string, dataAEditar) {
     return this._httpClient.put(url, dataAEditar);
   }
 

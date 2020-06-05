@@ -56,7 +56,7 @@ alert('Campos Vacios /n Por Favor Complete')
       alert('USUARIO NO EXISTE')
       
      }
-     alert('REGISTRO EXITOSO')
+    
     });
    
 

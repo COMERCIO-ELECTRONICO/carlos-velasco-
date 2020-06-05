@@ -3,9 +3,11 @@ import {ButtonModule} from 'primeng/button';
 import {CardModule} from 'primeng/card';
 import {CarouselModule} from 'primeng/carousel';
 import {DragDropModule} from 'primeng/dragdrop';
-import { TableModule } from 'primeng/table';
 import { FormsModule } from '@angular/forms';
 import {TabViewModule} from 'primeng/tabview';
+import {TableModule} from 'primeng/table';
+import {ToastModule} from 'primeng/toast';
+
 @NgModule({
 imports:[
     ButtonModule,
@@ -14,7 +16,9 @@ imports:[
     DragDropModule,
     TableModule,
     FormsModule,
-    TabViewModule
+    TabViewModule,
+    ToastModule,
+    
 ],
 exports:[
     ButtonModule,
@@ -23,7 +27,9 @@ exports:[
     DragDropModule,
     TableModule,
     FormsModule,
-    TabViewModule
+    TabViewModule,
+    ToastModule,
+    
 ]
 
 })

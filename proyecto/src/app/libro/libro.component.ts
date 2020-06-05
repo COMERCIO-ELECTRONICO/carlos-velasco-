@@ -10,10 +10,11 @@ export class LibroComponent implements OnInit {
 libro;
 datos;
 fech='05/06/2020';
-dev;
-devueleto;
+dev='no';
+devueleto='no';
 iduser;
 id;
+idlibro;
 
   constructor(
 private readonly _libroservice:AdminService,
@@ -36,17 +37,22 @@ private rutaDatos: ActivatedRoute
   }
   
   alquilar(datos){ 
-    this._libroservice .metodoPost('http://localhost:1337/prestamo',{
- 
+   
+this.idlibro=(datos)
+alert(this.idlibro)
+  this._libroservice 
+  
+  .metodoPost('http://localhost:1337/Prestamo',{
   FECHA_PRESTAMO:this.fech,
   FECHA_DEVOLUCION:this.dev,
-  DEVUELTO:this.iduser ,
+  DEVUELTO:this.devueleto ,
   lector_id:this.id,
-  prestamo_id:this.datos
+  prestamo_id:this.idlibro
 })
 .subscribe((resultadoalquilar)=>{
+
   alert('LIBRO ALQUILADO ')
-  alert(datos)
+ 
   console.log(resultadoalquilar);
                   
 })
