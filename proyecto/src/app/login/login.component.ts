@@ -38,13 +38,23 @@ export class LoginComponent implements OnInit {
 
     console.log('usuario')
     console.log(this.iduser)
-   if(this.pass===''&& this.user===''){
-alert('Campos Vacios /n Por Favor Complete')
+
+
+if(this.pass ===''){
+alert('CONTRASEÑA NO INGRSADA')
+
+}else
+   if( this.user===''){
+alert('USUSARIO NO INGRESADO')
    }else if (this.pass === 'admin'&& this.user==='admin') {
       alert('ADMINNISTRADOR')
       this._router.navigate(
         [`/perfil-admin/`+this.iduser]
       )
+    }else if(this.adminuser===''){
+alert('USUARIO NO EXISTE')
+    }else if(this.pass !== this.adminpass){
+      alert('CONTRSEÑA INCORRECTA')
     }else if(this.user===this.adminuser && this.pass===this.adminpass){
       alert('Bienvenido:'+this.adminuser)
        this._router.navigate(

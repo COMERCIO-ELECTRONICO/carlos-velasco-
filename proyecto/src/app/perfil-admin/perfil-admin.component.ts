@@ -80,6 +80,8 @@ export class PerfilAdminComponent implements OnInit {
           console.log(resultadoMetodopost);
           console.log('datos ingresados');
           alert('CARRERA INGRESADA')
+          this.nomcarrera===''
+          this._router .navigate(['/perfil-admin/'+this.id])
           
         });
 
@@ -175,7 +177,6 @@ this._AdminServicervice
     alert('DATOS ACTUALIZADOS')
 
   }
-
 
 //ELIMINADORES
 

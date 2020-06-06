@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import {TabViewModule} from 'primeng/tabview';
 import {TableModule} from 'primeng/table';
 import {ToastModule} from 'primeng/toast';
+import {ToolbarModule} from 'primeng/toolbar';
 
 @NgModule({
 imports:[
@@ -18,7 +19,7 @@ imports:[
     FormsModule,
     TabViewModule,
     ToastModule,
-    
+    ToolbarModule
 ],
 exports:[
     ButtonModule,
@@ -29,7 +30,7 @@ exports:[
     FormsModule,
     TabViewModule,
     ToastModule,
-    
+    ToolbarModule
 ]
 
 })

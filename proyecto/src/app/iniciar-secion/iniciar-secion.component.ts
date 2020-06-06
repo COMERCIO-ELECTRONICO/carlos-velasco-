@@ -34,16 +34,23 @@ carreraid;
   }
 
   registro(){
+    
     this.carreraid===this.selected
     console.log(this.carreraid)
-if(this.Nombre ==='' ){
+if(
+  this.Nombre===''){
+alert('INGRESE SU NOMBRE ')
+}else if(this.Usuario===''){
+  alert('INGRSE NOMBRE DE USUARIO')
+}else if(this.Contrasena===''){
+  alert('INGRESE UNA CONTRASEÑA')
+}else if(this.Nombre ==='' ){
 alert('debe llenar los campos')
 
-  }else if(this.Edad === 0){
-alert('solo numeros')
+  }else if(this.Edad === null ){
+alert('INGRESE LA EDAD')
 }
 else{
-  
   
   this._RegistroService
   .metodoPost('http://localhost:1337/Perfil',{
